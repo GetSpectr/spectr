@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: spectr
+Version: 0.0.1
+Summary: A python client library for the Spectr API.
+Home-page: https://gitlab.com/getspectr/spectr
+Author: Hussain Shah
+Author-email: hussain@getspectr.com
+License: MIT
+Keywords: spectr client api
+License-File: LICENSE

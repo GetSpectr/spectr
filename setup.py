@@ -6,7 +6,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         'requests==2.31.0',
-        'pandas==2.0.2'
+        'pandas'
     ],
     author="Hussain Shah",
     author_email="hussain@getspectr.com",

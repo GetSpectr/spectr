@@ -115,7 +115,7 @@ class Spectr:
             ) from None
 
         if response.status_code != 200:
-            raise Exception(f"Query failed: {str(response.json())}")
+            raise Exception(f"Query failed: {response.json()}")
         
         if not verify:
             response_df = pd.read_csv(StringIO(response.json()['response']), sep=",")

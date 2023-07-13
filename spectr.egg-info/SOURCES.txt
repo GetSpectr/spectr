@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+spectr/__init__.py
+spectr/spectr.py
+spectr.egg-info/PKG-INFO
+spectr.egg-info/SOURCES.txt
+spectr.egg-info/dependency_links.txt
+spectr.egg-info/requires.txt
+spectr.egg-info/top_level.txt
+tests/__init__.py
+tests/test_spectr.py
