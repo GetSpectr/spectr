@@ -69,12 +69,12 @@ class Spectr:
 
         print(f"{response.json()['detail']}")
 
-    def query(self, query, verify=False):
+    def query(self, query, sources=False):
         # Perform a query on the repo
         try:
             response = requests.post(
                 f"{self.base_url}/client/query",
-                data={"api_key": self.api_key, "repo_id": self.repo_id, "query": query, "eval": verify}
+                data={"api_key": self.api_key, "repo_id": self.repo_id, "query": query, "sources": sources}
             )
         except Exception as e:
             raise Exception(
@@ -84,7 +84,7 @@ class Spectr:
 
         if response.status_code != 200:
             raise Exception(f"Query failed: {str(response.json())}")
-        if not verify:
+        if not sources:
             print(response.json()['response'])
             return
         print("Response:")
@@ -101,12 +101,12 @@ class Spectr:
         print(eval_df)
         return
 
-    def get_df(self, query, verify=False):
+    def get_df(self, query, sources=False):
         # Perform a query on the repo
         try:
             response = requests.post(
                 f"{self.base_url}/client/get_df",
-                data={"api_key": self.api_key, "repo_id": self.repo_id, "query": query, "eval": verify}
+                data={"api_key": self.api_key, "repo_id": self.repo_id, "query": query, "sources": sources}
             )
         except Exception as e:
             raise Exception(
@@ -117,7 +117,7 @@ class Spectr:
         if response.status_code != 200:
             raise Exception(f"Query failed: {str(response.json())}")
         
-        if not verify:
+        if not sources:
             response_df = pd.read_csv(StringIO(response.json()['response']), sep=",")
             return response_df
 
